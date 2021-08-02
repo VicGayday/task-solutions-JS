@@ -11,7 +11,7 @@
 
 //aug is an integer, percent a positive or null floating number, p0 and p are positive integers (> 0)
 
-//Мое решение:
+//My solution:
 
 function nbYear(p0, percent, aug, p) {
   var count = 0;
