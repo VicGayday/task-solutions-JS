@@ -22,4 +22,23 @@ function nbYear(p0, percent, aug, p) {
   return count;
 }
 
-display.log(nbYear(1500, 5, 100, 5000))
+console.log(nbYear(1500, 5, 100, 5000))
+
+// Write a function, which arguments are array of integers and an integer.
+// The function should return array with two integers from initial array - its product is equal to integer form second argument. Otherwise the function will return empty array.
+
+//My solution:
+
+function multiply(arr, nmb) {
+  for (let i = 0; i < arr.length; i += 1) {         //using two loops:
+    for (let j = i + 1; j < arr.length; j += 1) {   //second goes forward on 1 item,
+      if (arr[i] * arr[j] === nmb) {                //this way it is possible to compare elements of one array
+        return [arr[i], arr[j]];
+      }
+    }
+  }
+  return [];
+}
+
+console.log(multiply([1, 4, 6, 8, 5, 2], 20));
+
