@@ -42,3 +42,18 @@ function multiply(arr, nmb) {
 
 console.log(multiply([1, 4, 6, 8, 5, 2], 20));
 
+// Check if the string is palindrome.
+
+// My solution:
+
+function pal(word) {
+  for (let i = 0; i < word.length / 2; i += 1) {   // count half of the word
+    if (word[i] !== word[word.length - 1 - i]) {   //compare both halves of the word
+      return false;
+    }
+  }
+  return true;
+}
+
+display.log(pal("abvcaacba"));
+
