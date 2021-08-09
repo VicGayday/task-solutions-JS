@@ -55,5 +55,21 @@ function pal(word) {
   return true;
 }
 
-display.log(pal("abvcaacba"));
+console.log(pal("abvcaacba"));
+
+//Write a function that takes a positive integer n, sums all the cubed values from 1 to n,
+//and returns that sum.
+
+//Assume that the input n will always be a positive integer.
+
+//My solution:
+
+function sumCubes(n) {
+  let result = 0;
+  for (let i = n; i > 0; i -= 1) {         //using loop to work with all integers that are less than given integer
+    result += Math.pow([i], 3);            //use math function that allows to elevate the integer to needed exponent
+  }
+  return result;
+}
+console.log(sumCubes(3));
 
