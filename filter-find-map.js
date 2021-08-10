@@ -42,3 +42,18 @@ function multipleOfIndex(array) {
   });
   return multipleArray;
 }
+
+//Given an array of digital numbers, return a new array of length number containing the last
+//even numbers from the original array (in the same order).
+//The original array will be not empty and will contain at least "number" even numbers.
+
+//My solution:
+
+function evenNumbers(array, number) {
+  const filteredArr = array.filter((item, index) => {       //filter array for even numbers only
+    return item % 2 === 0;
+  });
+  const evenArray = filteredArr.slice(`-${number}`);      //use slice method with negative index, so it copy elements from the end of initial array
+  return evenArray
+}
+console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
