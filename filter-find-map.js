@@ -57,3 +57,32 @@ function evenNumbers(array, number) {
   return evenArray
 }
 console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+
+//Your task is to remove all duplicate words from a string, leaving only single (first) words entries.
+
+//Example:
+
+//Input:
+
+//'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
+
+//Output:
+
+//'alpha beta gamma delta'
+
+//My solution:
+
+function removeDuplicateWords(s) {
+  const noDuplicateStr = s
+    .split(" ")                                                      //transform the string into array
+    .filter((item, index, array) => array.indexOf(item) === index)   //filter array from duplicates
+    .join(" ");                                                      //turn it back to string
+  return noDuplicateStr;
+}
+
+console.log(
+  removeDuplicateWords(
+    "alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"
+  )
+);
+
