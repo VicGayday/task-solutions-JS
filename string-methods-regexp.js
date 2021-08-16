@@ -25,3 +25,21 @@ function swapVowelCase(str) {
     /[AEIOU]/.test(x) ? x.toLowerCase() : x.toUpperCase() //second argument of this method can also be callback-function
   );
 }
+
+//Here you have a connected to a socket, and the data looks very strange.
+//It seems to be separated by a random special character! Oh No!
+//We need your help to find the special character, parse the data, and return it translated!
+// There isn't much time, hurry we need your help!
+
+//My solution:
+
+function wordSplitter(string){
+return string
+  .replace(/[~`!#$%\^&*+=\\[\]\\';,/{}|\\":<>\?]/g, ",")   //replace all special character to ','
+  .split(",")                                              //make an array, splittig the elements by ','
+  .filter((it) => it || false)                             //filter the array from empty elements
+}
+
+display.log(
+  wordSplitter("32.0500;-6C:PITCH=-72#ROLL!21.3*REGISTER:90.345689&ARMED?-25")
+);
