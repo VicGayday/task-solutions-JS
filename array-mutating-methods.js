@@ -15,3 +15,16 @@ function findSmallestInt(args) {
   return smallestInt;
 }
 console.log(findSmallestInt([78, 56, 232, 12, 8]));
+
+//Finish the solution so that it sorts the passed in array of numbers.
+//If the function passes in an empty array or null/nil value then it should return an empty array.
+
+//My solution:
+
+function solution(nums) {
+  if (nums !== null) {                       //check if array is not empty
+    return nums.sort((a, b) => a - b);       //then use callback function to sort it in ascending order
+  } else {
+    return [];                               //if the array is empty - return empty array
+  }
+}
