@@ -25,3 +25,13 @@ function countRedBeads(n) {
   }
 }
 console.log(countRedBeads(5));     //will show 8
+
+//Given an integral number, determine if it's a square number.
+
+//My solution:
+
+const isSquare = function (n) {
+  return Math.sqrt(n) % 1 === 0 ? true : false;
+};
+
+console.log(isSquare(25));    //will return true
