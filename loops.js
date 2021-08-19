@@ -73,3 +73,19 @@ function sumCubes(n) {
 }
 console.log(sumCubes(3));
 
+
+//Complete the function that accepts a string parameter, and reverses each word in the string.
+//All spaces in the string should be retained.
+
+//My solution:
+
+function reverseWords(str) {
+  let newStr = ''
+  for (let i=str.length -1; i>=0; i-=1) {      //start loop from the end of string
+    newStr +=str[i]                            //add new character to an empty string on each iteration from the end of initial string
+  }
+  const reverseStr = newStr.split(' ').reverse().join(' ')   //reverse the string itself
+  return reverseStr
+}
+console.log(reverseWords('The quick brown fox jumps over the lazy dog.'));
+
