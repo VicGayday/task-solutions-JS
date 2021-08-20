@@ -59,6 +59,17 @@ function vaporcode(string) {
 
 console.log(vaporcode("Let's go to the movies"));
 
+//The aim of this task is to split a given string into different strings of equal size.
+//Needed size of the string is given as a number.
+
+//My solution:
+
+function splitInParts(s, partLength) {
+  const re = new RegExp(`\\w{1,${partLength}}`, "g");   //use constructor for regexp because it allows to use template literals
+  return s.match(re);
+}
+display.log(splitInParts("supercalifragilisticexpialidocious", 5));
+
 
 
 
