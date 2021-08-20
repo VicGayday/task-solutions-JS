@@ -66,7 +66,7 @@ console.log(vaporcode("Let's go to the movies"));
 
 function splitInParts(s, partLength) {
   const re = new RegExp(`\\w{1,${partLength}}`, "g");   //use constructor for regexp because it allows to use template literals
-  return s.match(re);
+  return s.match(re).join(' ')
 }
 display.log(splitInParts("supercalifragilisticexpialidocious", 5));
 

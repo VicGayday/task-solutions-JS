@@ -35,3 +35,17 @@ const isSquare = function (n) {
 };
 
 console.log(isSquare(25));    //will return true
+
+//You are asked to square every digit of a number and concatenate them.
+
+//For example, if we run 9119 through the function, 811181 will come out, because 92 is 81
+//and 12 is 1.
+
+//My solution:
+
+function squareDigits(num){
+  const result = num.toString().split('').map(it => Math.pow(it, 2)).join('')  //change number to string, then to array of digits, then square every digit, then make string again
+  return +result                                                               //return number
+}
+
+console.log(squareDigits(3212))  //will return 9414
