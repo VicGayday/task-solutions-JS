@@ -86,3 +86,26 @@ console.log(
   )
 );
 
+//Given an array of integers, find the one that appears an odd number of times.
+
+//There will always be only one integer that appears an odd number of times.
+//Examples:
+
+//[7] should return 7, because it occurs 1 time (which is odd).
+//[0] should return 0, because it occurs 1 time (which is odd).
+//[1,1,2] should return 2, because it occurs 1 time (which is odd).
+
+//My solution:
+
+function findOdd(A) {
+  const obj = A.reduce((acc, rec) => {
+    acc[rec] = (acc[rec] || 0) + 1;             //make an object with value - quantity of each integer appearance
+    return acc;
+  }, {});
+  return Object.keys(obj).reduce((acc, rec) => {  //find out which object key have value that is odd
+    return obj[rec] % 2 !== 0 ? +rec : acc;
+  }, 0);
+}
+
+console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));  //will return 5
+
