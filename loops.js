@@ -89,3 +89,23 @@ function reverseWords(str) {
 }
 console.log(reverseWords('The quick brown fox jumps over the lazy dog.'));
 
+
+//Try to build a program that takes a value, integer , and returns a list of its multiples up to another value, limit.
+//If limit is a multiple of integer, it should be included as well. There will only ever be positive
+//integers passed into the function, not consisting of 0. The limit will always be higher than the base.
+
+//For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4,
+//and 6 are the multiples of 2 up to 6.
+
+//My solution:
+
+function findMultiples(integer, limit) {
+  let result = [];                             //make new variable for keeping result in it
+  for (let i = 1; i <= limit; i += 1) {          //make loop that goes thru all integers that comes from 1 up to limit variable
+    i % integer === 0 ? result.push(i) : result;   //check if all integers that comes before limit variable are divisible on integer variable, if yes - add these integers to result array
+  }
+  return result;
+}
+
+console.log(findMultiples(5, 25))     // will return [5, 10, 15, 20, 25]
+
