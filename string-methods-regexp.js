@@ -70,7 +70,23 @@ function splitInParts(s, partLength) {
 }
 display.log(splitInParts("supercalifragilisticexpialidocious", 5));
 
+//Function accum takes a string as a parametr. Return a string transformed as in the example below:
 
+//accum("abcd") -> "A-Bb-Ccc-Dddd"
+//accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+//accum("cwAt") -> "C-Ww-Aaa-Tttt"
+
+//My solution:
+
+function accum(s) {
+  return s
+    .split("")                                  //make an array
+    .map((it, index) => it.repeat(index + 1))   //make each element repeat as many times as its index is
+    .map((it) => `${it.slice(0, 1).toUpperCase()}${it.slice(1).toLowerCase()}`) //make each element first letter - uppercase, other letter - lowercase
+    .join("-");
+}
+
+console.log(accum("ZpglnRxqenU")); //will return Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu
 
 
 
