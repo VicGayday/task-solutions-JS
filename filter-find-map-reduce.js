@@ -109,3 +109,27 @@ function findOdd(A) {
 
 console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));  //will return 5
 
+//Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+
+//It should remove all values from list a, which are present in list b keeping their order.
+
+//arrayDiff([1,2],[1]) == [2]
+
+//If a value is present in b, all of its occurrences must be removed from the other:
+
+//arrayDiff([1,2,2,2,3],[2]) == [1,3]
+
+
+//My solution:
+
+function arrayDiff(a, b) {
+  return a.reduce((acc, rec) => {
+    if (b.indexOf(rec) !== -1) {          //check if second array have first array elements
+      return acc;
+    }
+    return [...acc, rec];
+  }, []);
+}
+
+console.log(arrayDiff([3, 4], [3]));  //will  return [4]
+
