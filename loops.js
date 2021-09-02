@@ -109,3 +109,18 @@ function findMultiples(integer, limit) {
 
 console.log(findMultiples(5, 25))     // will return [5, 10, 15, 20, 25]
 
+//Input: a string and an array of strings
+
+//Output: a boolean true if all rotations of string are included in arr, false otherwise
+
+
+//My solution:
+
+function containAllRots(str, arr) {
+  for (let i = 0; i < str.length; i+=1) {
+    if (arr.indexOf(str.slice(i) + str.slice(0, i)) === -1) {  //on each loop iteration string is cut and 'glued' again with next corresponding index
+      return false
+    }
+  }
+  return true
+}
