@@ -133,3 +133,21 @@ function arrayDiff(a, b) {
 
 console.log(arrayDiff([3, 4], [3]));  //will  return [4]
 
+
+//In this little assignment you are given a string of space separated numbers,
+//and have to return the highest and lowest number.
+
+//My solution:
+
+function highAndLow(numbers) {
+  const array = numbers.split(" ");                //make an array
+  const firstEl = array.reduce((acc, rec) => {     //find the biggest integer in the array
+    return Math.max(acc, rec);
+  });
+  const lastEl = array.reduce((acc, rec) => {      //find the smallest integer in the array
+    return Math.min(acc, rec);
+  });
+  const result = [firstEl, lastEl].join(" ");      //make new array with biggest and smallest integers
+  return result;                                   //and transform it into a string
+}
+console.log(highAndLow("1 2 3 4 5"))         //will return '5, 1'
