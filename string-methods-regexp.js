@@ -88,6 +88,27 @@ function accum(s) {
 
 console.log(accum("ZpglnRxqenU")); //will return Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu
 
+//Write a script that takes an array of possible passwords and a string of binary representing
+//the possible password. Convert the binary to a string and compare to the password array.
+//If the password is found, return the password string, else return false;
 
+//My solution:
+
+function decodePass(passArr, bin) {
+  const password = bin
+    .split(" ")
+    .map((it) => {
+      return String.fromCharCode(parseInt(it, 2));  //covert binary to string
+    })
+    .join("");
+  return passArr.includes(password) ? password : false;   //check if array with password includes binary password
+}
+
+console.log(
+  decodePass(
+    ["password123", "admin", "admin1"],
+    "01110000 01100001 01110011 01110011 01110111 01101111 01110010 01100100 00110001 00110010 00110011"
+  )
+)    //will return 'password123
 
 
