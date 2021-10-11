@@ -151,3 +151,27 @@ function highAndLow(numbers) {
   return result;                                   //and transform it into a string
 }
 console.log(highAndLow("1 2 3 4 5"))         //will return '5, 1'
+
+
+//Several people are standing in a row divided into two teams.
+//The first person goes into team 1, the second goes into team 2, the third goes into team 1, and so on.
+//Given an array of positive integers (the weights of the people), return a new array/tuple of two
+//integers, where the first one is the total weight of team 1, and the second one is the total weight
+//of team 2.
+//Array size is at least 1.
+//All numbers will be positive.
+
+//My solution:
+
+function rowWeights(array){
+  const row1 = array.filter((it, index) => {   //make new array of those integers, which indexes are multiple to 2
+  return index % 2 === 0
+  }).reduce ((acc, rec) => acc + rec, 0)       //sum up integers in first array
+
+  const row2 = array.filter((it, index) => {   //make second array with integers which indexes are NOT equal to 2.
+  return index % 2 !== 0
+}).reduce ((acc, rec) => acc + rec, 0)        //sum it up
+  return new Array(row1, row2)                //return new array which elements are two previously calculated sums
+}
+
+display.log(rowWeights([50,60,70,80]))  // will return [120, 140]
