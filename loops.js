@@ -137,3 +137,22 @@ function lastSurvivor(letters, coords) {
   }
   return letters.join("");                       //transform into string again
 }
+
+//Function takes as a parameter unsorted array containing integers from 1 to n. Each integer appear only once
+//but one of it is lost. You need to find the integer which is lost and return it.
+//If the array is empty - need to return next integer(1)
+//If no integer is lost - it means the last from the end is lost.
+
+//My solution:
+
+function findNumber(array) {
+  if (array.length === 0) return 1;       //treat the case of empty array
+  let missingNumber = 0;
+  for (let i = 1; i <= array.length + 1; i += 1) {
+    if (array.indexOf(i) === -1) {                  //comparing the indexes, which does not correspond
+      missingNumber += i;
+    }
+  }
+  return missingNumber;
+}
+
