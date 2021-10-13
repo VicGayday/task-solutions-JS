@@ -49,3 +49,27 @@ function squareDigits(num){
 }
 
 console.log(squareDigits(3212))  //will return 9414
+
+
+//Given the triangle of consecutive odd numbers:
+
+            // 1
+         // 3     5
+      // 7     9    11
+  // 13    15    17    19
+//21    23    25    27    29
+//...
+
+//Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) e.g.: (Input --> Output)
+
+//1 -->  1
+//2 --> 3 + 5 = 8
+
+//My solution:
+
+//This is tricky task, more of math thinking:
+
+function rowSumOddNumbers(n) {
+  return Math.pow(n, 2) * n;                  //if one try to calculate this tree to see some consistency, you can see that sum of each row divided to n is equal to squared n. So to find the sum we need to make oposite action multiply sqared n to n.
+}
+
