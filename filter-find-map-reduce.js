@@ -175,3 +175,18 @@ function rowWeights(array){
 }
 
 display.log(rowWeights([50,60,70,80]))  // will return [120, 140]
+
+//Return an output string that translates an input string s/$s by replacing each character in s/$s
+//with a number representing the number of times that character occurs in s/$s and separating each
+//number with the character(s) sep/$sep.
+
+//My solution:
+
+function freqSeq(str, sep) {
+  const separatedStr = str.split("")                    //transform string into array
+  const count = separatedStr.reduce((acc, rec) => {     //make an object with count of each letter
+    acc[rec] = (acc[rec] || 0) + 1
+    return acc
+  }, {})
+  return separatedStr.map((it) => count[it]).join(sep)   //use initial array to replace the letters with values from previosly created object
+}
