@@ -190,3 +190,16 @@ function freqSeq(str, sep) {
   }, {})
   return separatedStr.map((it) => count[it]).join(sep)   //use initial array to replace the letters with values from previosly created object
 }
+
+// Write a function that accepts an unlimited number of integer arguments, and adds all of them together.
+//The function should reject any arguments that are not integers, and sum the remaining integers.
+
+//My solution:
+
+function sum() {
+  return Object.values(arguments)          //using reserved object arguments - taking only its values
+  .filter((it) => Number.isInteger(it))    //reject those arguments, which are not integers
+  .reduce((acc, rec) => {
+    return acc + rec                        //sum all the rest integers
+  }, 0)
+}
