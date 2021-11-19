@@ -73,3 +73,22 @@ function rowSumOddNumbers(n) {
   return Math.pow(n, 2) * n;                  //if one try to calculate this tree to see some consistency, you can see that sum of each row divided to n is equal to squared n. So to find the sum we need to make oposite action multiply sqared n to n.
 }
 
+//You are the greatest chef on earth. No one boils eggs like you! Your restaurant is always full of guests,
+//who love your boiled eggs. But when there is a greater order of boiled eggs, you need some time,
+//because you have only one pot for your job. How much time do you need?
+//Implement a function, which takes a non-negative integer, representing the number of eggs to boil.
+//It must return the time in minutes (integer), which it takes to have all the eggs boiled.
+//    you can put at most 8 eggs into the pot at once
+//    it takes 5 minutes to boil an egg
+//    we assume, that the water is boiling all the time (no time to heat up)
+//    for simplicity we also don't consider the time it takes to put eggs into the pot or get them out of it
+
+//My solution:
+
+function cookingTime(eggs) {
+  if (eggs === 0) { return 0}                       //check if there are eggs
+  if (eggs % 8 === 0) {return eggs / 8 * 5}         //check if all the pots contain 8 eggs
+  const fullPots = Math.floor(eggs / 8)             //make rounded number of eggs multiple to 8
+  return eggs <= 8 ? 5 : fullPots * 5 + 5           //using ternary operator return 5 minutes if there is only 1 pot is needed or return fullPots needed time plus additional 5 minutes for extra eggs
+}
+
